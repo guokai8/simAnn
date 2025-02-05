@@ -116,7 +116,7 @@ clusterST <- function(
   attr(result, "threshold") <- threshold
   attr(result, "timestamp") <- Sys.time()
   
-  class(result) <- c("term_clusters", "list")
+  class(result) <- c("TermClusters", "list")
   return(result)
 }
 #' Summary method for TermClusters objects
