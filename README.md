@@ -87,7 +87,10 @@ This package is released under the MIT License.
 
 ## Citation
 
-If you use **simAnn** in your research, please cite it as:
+If you use **simAnn** in your research, please contact guokai8@gmail.com
 
-> Guo K. et al. *Semantic Similarity Analysis Using simAnn.*
+## Acknowledge
+This project includes some modified code from [https://github.com/jokergoo/simona]. 
+
+
 
