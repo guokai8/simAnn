@@ -75,8 +75,10 @@ clusterST <- function(
   } else {
     terms
   }
-  validTerms <- validateAnnotatedTerms(tree, terms_vec)
-  terms_vec <- terms_vec[validTerms]
+  if(method == "annotation"){
+    validTerms <- validateAnnotatedTerms(tree, termIds)
+    termIds <- termIds[validTerms]
+  }
   if(length(terms_vec) == 0) {
     stop("No valid terms provided")
   }
