@@ -61,7 +61,15 @@ clusterST(
 
 \item{useIgraph}{Use igraph-based calculation}
 
-\item{verbose}{Print progress messages}
+\item{verbose}{Print progress messages
+\dontrun{
+#Generate clusters
+tree <-  buildGOTree(namespace = "BP", orgDb = "org.Hs.eg.db")
+clu <- clusterST(tree, 1:30, 
+                          method = "wang",
+                          weights = weights,
+                          threshold = 0.2)
+}}
 }
 \value{
 A list containing multiple representations of clustering results

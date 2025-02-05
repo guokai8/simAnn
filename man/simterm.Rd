@@ -93,6 +93,7 @@ Available methods include:
 \examples{
 \dontrun{
 # Basic usage
+tree <-  buildGOTree(namespace = "BP", orgDb = "org.Hs.eg.db")
 sim <- simterm(tree, c("GO:0008150", "GO:0003674"), method = "ic")
 
 # Term overlap similarity

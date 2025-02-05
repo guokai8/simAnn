@@ -42,7 +42,7 @@ go_mf <- buildGOTree("MF", relations = c("part_of", "regulates"))
 
 # With organism annotations
 \dontrun{
-go_bp_human <- buildGOTree("BP", orgDb = "org.Hs.eg.db")
+tree <- buildGOTree("BP", orgDb = "org.Hs.eg.db")
 }
 }
 \author{

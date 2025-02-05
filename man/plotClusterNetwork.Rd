@@ -64,7 +64,8 @@ Nodes can be sized and shaped differently for parents vs children.
 \examples{
 \dontrun{
 # Generate clusters
-clu <- clusterST(dag5, 1:30, 
+tree <-  buildGOTree(namespace = "BP", orgDb = "org.Hs.eg.db")
+clu <- clusterST(tree, 1:30, 
                           method = "wang",
                           weights = weights,
                           threshold = 0.2)
