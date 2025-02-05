@@ -64,7 +64,7 @@ Nodes can be sized and shaped differently for parents vs children.
 \examples{
 \dontrun{
 # Generate clusters
-clu <- clusterSimilarTerms(dag5, 1:30, 
+clu <- clusterST(dag5, 1:30, 
                           method = "wang",
                           weights = weights,
                           threshold = 0.2)
