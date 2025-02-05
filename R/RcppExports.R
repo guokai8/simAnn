@@ -45,6 +45,10 @@ cross_min <- function(x) {
     .Call(`_simAnn_cross_min`, x)
 }
 
+cross_max <- function(x) {
+    .Call(`_simAnn_cross_max`, x)
+}
+
 countOffspring <- function(tree, includeSelf = FALSE) {
     .Call(`_simAnn_countOffspring`, tree, includeSelf)
 }

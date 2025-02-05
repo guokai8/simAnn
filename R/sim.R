@@ -416,10 +416,9 @@ calculateFaithSim <- function(tree, terms, method = "annotation", verbose = TRUE
   
   termIds <- term2id(tree, terms, strict = FALSE)
   IC <- calculateIC(tree, method, verbose = FALSE)[termIds]
-  if(method == "annotation"){
-    validTerms <- validateAnnotatedTerms(tree, termIds)
-    termIds <- termIds[validTerms]
-  }
+  
+  validTerms <- validateAnnotatedTerms(tree, termIds)
+  termIds <- termIds[validTerms]
   IC <- IC[validTerms]
   
   micaValues <- findMICA(tree, termIds, method, verbose = verbose)
@@ -453,10 +452,8 @@ calculateRelevanceSim <- function(tree, terms, method = "annotation", verbose = 
   termIds <- term2id(tree, terms, strict = FALSE)
   IC <- calculateIC(tree, method, verbose = FALSE)[termIds]
   
-  if(method == "annotation"){
-    validTerms <- validateAnnotatedTerms(tree, termIds)
-    termIds <- termIds[validTerms]
-  }
+  validTerms <- validateAnnotatedTerms(tree, termIds)
+  termIds <- termIds[validTerms]
   IC <- IC[validTerms]
   
   micaValues <- findMICA(tree, termIds, method, verbose = verbose)
@@ -491,10 +488,8 @@ calculateSimICSim <- function(tree, terms, method = "annotation", verbose = TRUE
   termIds <- term2id(tree, terms, strict = FALSE)
   IC <- calculateIC(tree, method, verbose = FALSE)[termIds]
   
-  if(method == "annotation"){
-    validTerms <- validateAnnotatedTerms(tree, termIds)
-    termIds <- termIds[validTerms]
-  }
+  validTerms <- validateAnnotatedTerms(tree, termIds)
+  termIds <- termIds[validTerms]
   IC <- IC[validTerms]
   
   micaValues <- findMICA(tree, termIds, method, verbose = verbose)
