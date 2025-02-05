@@ -90,7 +90,7 @@ This package is released under the MIT License.
 If you use **simAnn** in your research, please contact guokai8@gmail.com
 
 ## Acknowledge
-This project includes some modified code from [https://github.com/jokergoo/simona]. 
+This project includes some modified code from _simona_ package. 
 
 
 
