@@ -33,13 +33,29 @@ library(simAnn)
 ### 2. Build Ontology Tree
 
 ```r
-tree <- buildOntologyTree(namespace = "BP")
+tree<-buildGOTree(namespace = "BP",orgDb = "org.Hs.eg.db",keytype = "SYMBOL")
+# or try some examples
+parents  = c("a", "a", "b", "b", "c", "d")
+children = c("b", "c", "c", "d", "e", "f")
+annotation = list(
+    "a" = 1:3,
+    "b" = 3:4,
+    "c" = 5,
+    "d" = 7,
+    "e" = 4:7,
+    "f" = 8
+)
+tre<-buildOntologyTree(parentTerms = parents,childTerms = children,annotations = annotation)
+
 ```
 
 ### 3. Compute Term Similarity
 
 ```r
-sim_matrix <- clusterST(tree, terms = c("GO:0008150", "GO:0003674"))
+sim_matrix <- simterm(tree, terms = c("GO:0008150", "GO:0003674"))
+# or
+sim_matrix <- simterm(tre, terms = 1:6, method ="lin")
+
 ```
 
 ### 4. Compute KEGG Pathway Similarity
@@ -56,14 +72,22 @@ clu <- clusterST(tree, 1:30,
                  weights = weights, 
                  threshold = 0.2)
 ```
+### 6. Cluster Similar Terms with Custom Gene Sets (a list with term name and gene id)
 
-### 6. Visualize the Network
+```r
+clu <- clusterSTW(tree, names(geneset), geneset,
+                 method = "wang", 
+                 weights = weights, 
+                 threshold = 0.2)
+```
+
+### 7. Visualize the Network
 
 ```r
 plotClusterNetwork(cluster_result = clu)
 ```
 
-### 7. Visualize Heatmap of Similarity Clusters
+### 8. Visualize Heatmap of Similarity Clusters
 
 ```r
 plotClusterHeatmap(cluster_result = clu)
