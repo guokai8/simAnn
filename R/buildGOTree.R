@@ -16,7 +16,7 @@
 #' 
 #' # With organism annotations
 #' \dontrun{
-#' go_bp_human <- buildGOTree("BP", orgDb = "org.Hs.eg.db")
+#' tree <- buildGOTree("BP", orgDb = "org.Hs.eg.db")
 #' }
 #' @import GO.db AnnotationDbi
 #' @author Kai Guo

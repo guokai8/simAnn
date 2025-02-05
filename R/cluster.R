@@ -37,6 +37,14 @@
 #' @param useCache Use cached IC values when applicable
 #' @param useIgraph Use igraph-based calculation
 #' @param verbose Print progress messages
+#' \dontrun{
+#' #Generate clusters
+#' tree <-  buildGOTree(namespace = "BP", orgDb = "org.Hs.eg.db")
+#' clu <- clusterST(tree, 1:30, 
+#'                           method = "wang",
+#'                           weights = weights,
+#'                           threshold = 0.2)
+#' }
 #' @return A list containing multiple representations of clustering results
 #' @author Kai Guo
 #' @export
