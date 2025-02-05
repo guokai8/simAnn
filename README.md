@@ -83,7 +83,7 @@ help(package = "simAnn")
 
 ## License
 
-This package is released under the MIT License.
+This package is released under the GPL_v3 License.
 
 ## Citation
 
