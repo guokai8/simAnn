@@ -1,6 +1,6 @@
 Package: simAnn
 Type: Package
-Title: Semantic Similarity on Annotation Ontology
+Title: Semantic Similarity Analysis in R
 Version: 0.1
 Date: 2025-02-04
 Author: Kai Guo
