@@ -655,3 +655,97 @@ reportMultipleRoots <- function(roots, terms) {
   }
   message("Adding super root node")
 }
+
+#' Show method for OntologyTree
+#' @param object An OntologyTree object
+#' @export
+setMethod("show", "OntologyTree", function(object) {
+  cat("OntologyTree Object\n")
+  cat("-------------------\n")
+  cat("Source:       ", object@source, "\n")
+  cat("Total Terms:  ", object@termCount, "\n")
+  cat("Total Edges:  ", object@edgeCount, "\n")
+  cat("Root Term:    ", object@termNames[object@rootNode], "\n")
+  cat("Leaf Terms:   ", length(object@leafNodes), "\n")
+})
+
+#' Summary method for OntologyTree
+#' @param object An OntologyTree object
+#' @export
+setMethod("summary", "OntologyTree", function(object) {
+  cat("OntologyTree Summary\n")
+  cat("---------------------\n")
+  cat("Source:          ", object@source, "\n")
+  cat("Total Terms:     ", object@termCount, "\n")
+  cat("Total Relations: ", object@edgeCount, "\n")
+  cat("Root Term:       ", object@termNames[object@rootNode], "\n")
+  cat("Number of Leaves:", length(object@leafNodes), "\n")
+  
+  # Parent & Child statistics
+  cat("Max Parents:     ", max(object@n_parents), "\n")
+  cat("Max Children:    ", max(object@n_children), "\n")
+  
+  # Relationship types
+  if (!is.null(object@edgeTypes) && length(object@edgeTypes) > 0) {
+    cat("Unique Relations:", length(unique(unlist(object@edgeTypes))), "\n")
+  } else {
+    cat("Unique Relations: None defined\n")
+  }
+  
+  # Annotation summary
+  if (!is.null(object@annotations$list) && length(object@annotations$list) > 0) {
+    cat("Annotated Terms: ", sum(sapply(object@annotations$list, length) > 0), "\n")
+  } else {
+    cat("Annotated Terms: 0\n")
+  }
+})
+
+#' Print an OntologyTree object
+#' 
+#' @param x An OntologyTree object
+#' @param ... Additional arguments (ignored)
+#' @return None (prints summary to console)
+#' @export
+print.OntologyTree <- function(x, ...) {
+  cat("OntologyTree Object\n")
+  cat("-------------------\n")
+  cat("Source:       ", x@source, "\n")
+  cat("Total Terms:  ", x@termCount, "\n")
+  cat("Total Edges:  ", x@edgeCount, "\n")
+  cat("Root Term:    ", x@termNames[x@rootNode], "\n")
+  cat("Leaf Terms:   ", length(x@leafNodes), "\n")
+}
+
+#' Summary of an OntologyTree object
+#' 
+#' @param object An OntologyTree object
+#' @param ... Additional arguments (ignored)
+#' @return A structured summary of the ontology tree
+#' @export
+summary.OntologyTree <- function(object, ...) {
+  cat("OntologyTree Summary\n")
+  cat("---------------------\n")
+  cat("Source:          ", object@source, "\n")
+  cat("Total Terms:     ", object@termCount, "\n")
+  cat("Total Relations: ", object@edgeCount, "\n")
+  cat("Root Term:       ", object@termNames[object@rootNode], "\n")
+  cat("Number of Leaves:", length(object@leafNodes), "\n")
+  
+  # Parent & Child statistics
+  cat("Max Parents:     ", max(object@n_parents), "\n")
+  cat("Max Children:    ", max(object@n_children), "\n")
+  
+  # Relationship types
+  if (!is.null(object@edgeTypes) && length(object@edgeTypes) > 0) {
+    cat("Unique Relations:", length(unique(unlist(object@edgeTypes))), "\n")
+  } else {
+    cat("Unique Relations: None defined\n")
+  }
+  
+  # Annotation summary
+  if (!is.null(object@annotations$list) && length(object@annotations$list) > 0) {
+    cat("Annotated Terms: ", sum(sapply(object@annotations$list, length) > 0), "\n")
+  } else {
+    cat("Annotated Terms: 0\n")
+  }
+}
