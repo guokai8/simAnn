@@ -58,10 +58,10 @@ sim_matrix <- simterm(tre, terms = 1:6, method ="lin")
 
 ```
 
-### 4. Compute KEGG Pathway Similarity
+### 4. Compute Similarity Get Clusters
 
 ```r
-sim_kegg <- clusterST(tree, terms = c("hsa04110", "hsa04060"))
+clu <- clusterST(tre, terms = 1:6, threshold = 0.1)
 ```
 
 ### 5. Cluster Similar Terms with Custom Method and Parameters
@@ -91,6 +91,12 @@ plotClusterNetwork(cluster_result = clu)
 
 ```r
 plotClusterHeatmap(cluster_result = clu)
+```
+### 8. All Available methods
+
+```r
+AllSimMethod()
+AllICMethod()
 ```
 
 ## Documentation
