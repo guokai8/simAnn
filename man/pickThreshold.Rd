@@ -52,7 +52,7 @@ one of several quality metrics. The available quality metrics include:
   sim_mat <- matrix(runif(100, 0, 1), nrow = 10)
   diag(sim_mat) <- 1
   result <- pickThreshold(sim_mat, thresholds = seq(0.5, 0.9, by = 0.01),
-                                  cluster_method = "components", quality_metric = "ch_index")
+                                  cluster_method = "components", quality_metric = "modularity")
   best_th <- result$best_threshold
 }
 
