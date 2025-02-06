@@ -76,7 +76,7 @@ threshold <- pickThreshold(sim_mat,thresholds = seq(0.5,0.9,0.01),cluster_method
 clu <- clusterST(tree, 1:50, 
                  method = "wang", 
                  weights = weights, 
-                 threshold = 0.7)
+                 threshold$best_threshold)
 ```
 ### 6. Cluster Similar Terms with Custom Gene Sets (a list with term name and gene id)
 
