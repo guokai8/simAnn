@@ -67,10 +67,10 @@ clu <- clusterST(tre, terms = 1:6, threshold = 0.1)
 ### 5. Cluster Similar Terms with Custom Method and Parameters
 
 ```r
-clu <- clusterST(tree, 1:30, 
+clu <- clusterST(tree, 1:50, 
                  method = "wang", 
                  weights = weights, 
-                 threshold = 0.2)
+                 threshold = 0.7)
 ```
 ### 6. Cluster Similar Terms with Custom Gene Sets (a list with term name and gene id)
 
