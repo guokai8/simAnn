@@ -67,6 +67,7 @@ clu <- clusterST(tre, terms = 1:6, threshold = 0.1)
 ### 5. Cluster Similar Terms with Custom Method and Parameters
 
 ```r
+weights <- c("is_a" = 0.8, "part_of" = 0.6)
 clu <- clusterST(tree, 1:50, 
                  method = "wang", 
                  weights = weights, 
