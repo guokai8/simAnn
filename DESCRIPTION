@@ -1,7 +1,7 @@
 Package: simAnn
 Type: Package
 Title: Semantic Similarity Analysis in R
-Version: 0.3
+Version: 0.4
 Date: 2025-02-05
 Author: Kai Guo
 Maintainer: Kai Guo <guokai8@gmail.com>
