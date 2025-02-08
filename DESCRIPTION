@@ -7,7 +7,13 @@ Author: Kai Guo
 Maintainer: Kai Guo <guokai8@gmail.com>
 Description: Semantic Similarity on Annotation Ontology.
 License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.13)
+Imports: Rcpp,
+    ggplot2,
+    igraph,
+    GO.db,
+    cluster,
+    methods,
+    stats
 LinkingTo: Rcpp
 Encoding: UTF-8
 RoxygenNote: 7.3.2
