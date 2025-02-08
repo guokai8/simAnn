@@ -46,7 +46,7 @@ annotation = list(
     "f" = 8
 )
 tre<-buildOntologyTree(parentTerms = parents,childTerms = children,annotations = annotation)
-
+trek <- buildKEGGTree(species = "human", keytype = "SYMBOL")
 ```
 
 ### 3. Compute Term Similarity
