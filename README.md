@@ -33,7 +33,7 @@ library(simAnn)
 ### 2. Build Ontology Tree
 
 ```r
-tree<-buildGOTree(namespace = "BP",orgDb = "org.Hs.eg.db",keytype = "SYMBOL")
+tree<-buildGOTree(species="human",namespace = "BP",keytype = "SYMBOL")
 # or try some examples
 parents  = c("a", "a", "b", "b", "c", "d")
 children = c("b", "c", "c", "d", "e", "f")
