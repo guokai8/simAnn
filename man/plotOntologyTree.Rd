@@ -4,12 +4,12 @@
 \alias{plotOntologyTree}
 \title{Plot Ontology Tree}
 \usage{
-plotOntologyTree(tree, layout = c("tree", "circular"), focus_terms = NULL)
+plotOntologyTree(tree, layout = c("tree"), focus_terms = NULL)
 }
 \arguments{
 \item{tree}{An OntologyTree object representing the hierarchical ontology structure.}
 
-\item{layout}{Character, either "tree" (default) for a hierarchical dendrogram or "circular" for a circular dendrogram.}
+\item{layout}{Character, either "tree" (default) for a hierarchical dendrogram.}
 
 \item{focus_terms}{Optional character vector specifying terms to highlight in the tree. If NULL, the entire tree is plotted.}
 }
@@ -25,7 +25,7 @@ Visualizes an OntologyTree as either a hierarchical tree or a circular dendrogra
 plotOntologyTree(tree)
 
 # Plot a circular version of the ontology tree
-plotOntologyTree(tree, layout = "circular")
+plotOntologyTree(tree)
 
 # Highlight specific terms in the ontology tree
 plotOntologyTree(tree, focus_terms = c("GO:0008150", "GO:0003674"))
