@@ -2,7 +2,7 @@
 #' @description Visualizes an OntologyTree as a hierarchical tree or circular dendrogram.
 #'
 #' @param tree An OntologyTree object representing the hierarchical ontology structure.
-#' @param layout Character, either "tree" (default) for a hierarchical dendrogram or "circular" for a circular dendrogram.
+#' @param layout Character, either "tree" (default) for a hierarchical dendrogram.
 #' @param focus_terms Optional character vector specifying terms to highlight in the tree. If NULL, the entire tree is plotted.
 #'
 #' @return A ggplot object displaying the ontology tree structure.
@@ -11,7 +11,7 @@
 #' @importFrom ggraph ggraph create_layout geom_edge_link geom_node_point geom_node_text
 #' @importFrom ggplot2 theme_void
 #' @export
-plotOntologyTree <- function(tree, layout = c("tree", "circular"), focus_terms = NULL) {
+plotOntologyTree <- function(tree, layout = c("tree"), focus_terms = NULL) {
   layout <- match.arg(layout)
   
   # Convert OntologyTree to edge list
