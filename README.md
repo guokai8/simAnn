@@ -71,7 +71,7 @@ clu <- clusterST(tre, terms = 1:6, threshold = threshold$best_threshold)
 
 ```r
 weights <- c("is_a" = 0.8, "part_of" = 0.6)
-sim_mat<-simterm(tre,1:50, method = "wang",weights = weights)
+sim_mat<-simterm(tree,1:50, method = "wang",weights = weights)
 threshold <- pickThreshold(sim_mat,thresholds = seq(0.5,0.9,0.01),cluster_method = "components","modularity")
 clu <- clusterST(tree, 1:50, 
                  method = "wang", 
