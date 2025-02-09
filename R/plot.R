@@ -53,10 +53,10 @@ plotOntologyTree <- function(tree, layout = c("tree", "circular"), focus_terms =
   }
   
   # Convert to igraph object
-  g <- graph_from_data_frame(edge_list, directed = TRUE)
+  g <- igraph::graph_from_data_frame(edge_list, directed = TRUE)
   
   # Choose layout
-  p <- ggraph(g, layout = "dendrogram", circular = (layout == "circular"))
+  p <- ggraph::ggraph(g, layout = "dendrogram", circular = (layout == "circular"))
   
   # Highlight focus_terms in red, others in blue
   node_colors <- ifelse(V(g)$name %in% focus_terms, "red", "blue")
