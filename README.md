@@ -52,7 +52,7 @@ trek <- buildKEGGTree(species = "human", keytype = "SYMBOL")
 ### 3. Compute Term Similarity
 
 ```r
-sim_mat <- simterm(tree, terms = c("GO:0008150", "GO:0003674"))
+sim_mat <- simterm(tree, terms = c("GO:0008150", "GO:0000011"))
 # or
 sim_mat <- simterm(tre, terms = 1:6, method ="lin")
 
