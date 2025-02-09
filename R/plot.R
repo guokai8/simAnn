@@ -44,10 +44,10 @@ plotOntologyTree <- function(tree, layout = c("tree", "circular"), focus_terms =
   g <- igraph::graph_from_data_frame(edge_list, directed = TRUE)
   
   # Generate plot
-  p <- gggraph::ggraph(g, layout = "dendrogram", circular = (layout == "circular")) +
-    gggraph::geom_edge_link(color = "gray") +
-    gggraph::geom_node_point(color = "cyan4", size = 3) + 
-    gggraph::geom_node_text(aes(label = name), repel = TRUE, size = 4) + 
+  p <- ggraph::ggraph(g, layout = "dendrogram", circular = (layout == "circular")) +
+    ggraph::geom_edge_link(color = "gray") +
+    ggraph::geom_node_point(color = "cyan4", size = 3) + 
+    ggraph::geom_node_text(aes(label = name), repel = TRUE, size = 4) + 
     theme_void()
   
   return(p)
