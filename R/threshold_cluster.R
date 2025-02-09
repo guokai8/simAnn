@@ -263,9 +263,6 @@ pickThreshold <- function(sim_mat,
   
   for (i in seq_along(thresholds)) {
     th <- thresholds[i]
-    if (verbose) {
-      message(sprintf("Evaluating threshold %.3f (%d/%d)", th, i, length(thresholds)))
-    }
     
     # Perform clustering at the current threshold.
     clustering <- threshold_cluster(sim_mat, threshold = th,
