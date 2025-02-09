@@ -452,7 +452,7 @@ extract_genes_from_terms <- function(tree, term_ids) {
 AllSimMethod<-function(){
   d<-data.frame(paramaters=c("lin","resnik","faith","rel","simic","gogo","ic","wang","term","term","term","term","anc"),
                 submethods=c("","","","","","","","","kappa","jaccard","dice","overlap",""),
-                methods=c("Lin_1998","Resnik_1999" , "FaITH_2010" , "Relevance_2006","SimIC_2010" ,"universal" ,"Wang_2007","GOGO_2018" ,"Kappa" ,
+                methods=c("Lin_1998","Resnik_1999" , "FaITH_2010" , "Relevance_2006","SimIC_2010" ,"GOGO_2018","universal" ,"Wang_2007","Kappa" ,
                              "Jaccard" ,  "Dice" , "Overlap" , "Ancestor"))
   print(d)
 }
