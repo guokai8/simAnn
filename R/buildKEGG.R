@@ -209,7 +209,7 @@ buildKEGGTree <- function(species = "ko", keytype = c("SYMBOL","ENTREZID"), buil
   all_terms <- tree@termNames
   final_metadata <- data.frame(
     TermID = all_terms,
-    Annot = NA_character_,
+    TermAnnot = NA_character_,
     namespace = NA_character_,
     row.names = all_terms,
     stringsAsFactors = FALSE
