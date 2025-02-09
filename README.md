@@ -34,6 +34,7 @@ library(simAnn)
 
 ```r
 tree<-buildGOTree(species="human",namespace = "BP",keytype = "SYMBOL")
+plotOntologyTree(tree,focus_terms = tree@termNames[1:5])
 # or try some examples
 parents  = c("a", "a", "b", "b", "c", "d")
 children = c("b", "c", "c", "d", "e", "f")
@@ -46,6 +47,7 @@ annotation = list(
     "f" = 8
 )
 tre<-buildOntologyTree(parentTerms = parents,childTerms = children,annotations = annotation)
+plotOntologyTree(tre)
 trek <- buildKEGGTree(species = "human", keytype = "SYMBOL")
 ```
 
