@@ -36,8 +36,8 @@ library(simAnn)
 tree<-buildGOTree(species="human",namespace = "BP",keytype = "SYMBOL")
 plotOntologyTree(tree,focus_terms = tree@termNames[1:5])
 # or try some examples
-parents  = c("a", "a", "b", "b", "c", "d")
-children = c("b", "c", "c", "d", "e", "f")
+parents  = c("a", "a", "b", "b", "b", "c", "d")
+children = c("b", "c", "c", "d", "e", "e", "f")
 annotation = list(
     "a" = 1:3,
     "b" = 3:4,
@@ -56,7 +56,7 @@ trek <- buildKEGGTree(species = "human", keytype = "SYMBOL")
 ```r
 sim_mat <- simterm(tree, terms = c("GO:0008150", "GO:0000011"))
 # or
-sim_mat <- simterm(tre, terms = 1:6, method ="lin")
+sim_mat <- simterm(tre, terms = 1:7, method ="lin")
 
 ```
 
