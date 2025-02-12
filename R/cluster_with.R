@@ -353,6 +353,7 @@ clusterSTW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik"
 #' @author Kai Guo
 #' @export
 simtermW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik", "lin","faith", "rel", "simic", "gogo", "wang", "anc"), 
+                     ic_method = c("annotation","universal","wang","offspring"),
                      submethod = c("kappa", "overlap", "jaccard", "dice"),
                      normType = "max",
                      weights = NULL,
