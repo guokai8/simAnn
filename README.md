@@ -108,7 +108,7 @@ sim_mat_resnik <- simterm(tree,
 ```r
 weights <- c("is_a" = 0.8, "part_of" = 0.6)
 sim_mat<-simterm(tree,1:50, method = "wang",weights = weights)
-threshold <- pickThreshold(sim_mat,thresholds = seq(0.5,0.9,0.01),cluster_method = "components","modularity")
+threshold <- pickThreshold(sim_mat,thresholds = seq(0.5,0.9,0.01),cluster_method = "components",quality_metric = "modularity")
 clu <- clusterST(tree, 1:50, 
                  method = "wang", 
                  weights = weights, 
@@ -154,7 +154,7 @@ threshold <- pickThreshold(
     sim_mat_weighted,
     thresholds = seq(0.1, 0.9, 0.01),
     cluster_method = "components",
-    metric = "modularity"
+    quality_metric = "modularity"
 )
 
 # Cluster with gene sets
