@@ -145,9 +145,9 @@ sim_mat_weighted <- simtermW(tree,
                            weights = weights)
 ```
 
-### 4. Cluster Similar Terms
+### 4. Cluster Similar Terms with custom gene sets
 
-#### Standard Clustering
+####  Clustering
 ```r
 # Find optimal threshold
 threshold <- pickThreshold(
@@ -163,7 +163,7 @@ clu <- clusterSTW(tree,
                   new_annot = geneset,
                   method = "wang", 
                   weights = weights, 
-                  threshold = 0.2)
+                  threshold = threshold$best_threshold)
 ```
 
 #### Complex-based Clustering
