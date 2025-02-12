@@ -14,6 +14,7 @@
 - **Custom Thresholding and Weighting**: Allows fine-tuned similarity computations with adjustable parameters.
 - **Network and Heatmap Visualization**: Generates term similarity networks and heatmaps.
 - **Support for Multiple Ontologies**: Works with GO, KEGG, and other biological ontology systems.
+- **Clustering GO based on protein-protein complex**: Work for GO with human and mouse
 
 ## Installation
 
