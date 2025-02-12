@@ -93,9 +93,9 @@ custom_tree <- buildOntologyTree(
 #### Basic Similarity Calculation
 ```r
 # Different similarity methods
-sim_mat_ic <- simterm(tree, 
+sim_mat <- simterm(tree, 
                      terms = c("GO:0008150", "GO:0000011"),
-                     method = "ic")
+                     method = "term")
 
 sim_mat_resnik <- simterm(tree,
                          terms = 1:30,
