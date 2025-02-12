@@ -13,6 +13,7 @@ Imports: Rcpp,
     GO.db,
     cluster,
     methods,
+    pheatmap,
     ggraph,
     stats
 LinkingTo: Rcpp
