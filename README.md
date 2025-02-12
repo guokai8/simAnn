@@ -88,8 +88,31 @@ clu <- clusterSTW(tree, names(geneset), geneset,
                  method = "wang", 
                  weights = weights, 
                  threshold = 0.2)
+## Or directly have the enrichment results from richR (guokai8/richR) package
+clu <- clusterSTW(tree, res$Annot, as.data.frame(res),
+                 method = "wang", 
+                 weights = weights, 
+                 threshold = 0.2)
 ```
 
+### 6. Cluster the enrichment results with protein-protein complex data
+
+```r
+enrich_df <- data.frame(
+  Annot = c("GO:0006915", "GO:0012501"),
+  GeneID = c("CASP3,BCL2", "CASP3,BAX"),
+  Pvalue = c(0.001, 0.002)
+)
+cluc <- clusterComplex(enrich_df,
+                         species = "mouse",
+                         ontology_type = "BP",
+                         verbose = TRUE)
+## Or directly have the enrichment results from richR (guokai8/richR) package
+clur <- clusterComplex(as.data.frame(res),
+                         species = "mouse",
+                         ontology_type = "BP",
+                         verbose = TRUE)
+```
 ### 7. Visualize the Network
 
 ```r
