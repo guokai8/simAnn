@@ -198,10 +198,7 @@ complex_clusters <- clusterComplex(
 #### Tree Visualization
 ```r
 # Basic tree layout
-plotOntologyTree(tree, layout = "tree")
-
-# Circular layout
-plotOntologyTree(tree, layout = "circular")
+plotOntologyTree(custom_tree, layout = "tree")
 
 # Focus on specific terms
 plotOntologyTree(tree, 
