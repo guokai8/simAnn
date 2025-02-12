@@ -104,3 +104,83 @@
 #' data("leaf_df")
 #' str(leaf_df, 2)
 "leaf_df"
+
+#' Mouse Protein Complex Dataset
+#'
+#' This dataset contains information about protein complexes in mouse, including their functional groups,
+#' associated Gene Ontology (GO) terms, and component proteins. Each complex is described with multiple
+#' attributes including complex name, functional grouping, GO annotations, and subunit information.
+#'
+#' @format A data frame with multiple rows (one per subunit-complex combination) and 11 columns:
+#' \describe{
+#'   \item{ComplexName}{Character. Name of the protein complex.}
+#'   \item{Functional_Complex_Group}{Character. The functional group classification of the complex.}
+#'   \item{Root}{Character. Root classification identifier.}
+#'   \item{FCG_assoc_GO_ID}{Character. GO identifiers associated with the functional complex group.}
+#'   \item{ComplexID}{Character. Unique identifier for the complex.}
+#'   \item{subunits_gene_name}{Character. Gene names of complex subunits.}
+#'   \item{organism}{Character. Source organism (Mouse).}
+#'   \item{functions_go_id}{Character. GO term identifiers describing complex functions.}
+#'   \item{functions_go_name}{Character. Names of the GO terms.}
+#'   \item{functions_go_ontology}{Character. GO domain (e.g., cellular_component).}
+#'   \item{Ontology_type}{Character. Type of ontology (e.g., CC for Cellular Component).}
+#' }
+#'
+#' This dataset provides a comprehensive view of protein complexes and their functional annotations,
+#' particularly useful for studying protein complex organization and function in mouse.
+#'
+#' @source Compiled from protein complex databases and GO annotations.
+#'
+#' @examples
+#' data("mComplex")
+#' head(mComplex)
+#' 
+#' # Get unique complex names
+#' unique(mComplex$ComplexName)
+#'
+#' # Filter complexes by GO term
+#' er_complexes <- mComplex[mComplex$functions_go_id == "GO:0005783", ]
+#'
+"mComplex"
+
+#' Human Protein Complex Dataset
+#'
+#' This dataset contains information about protein complexes in human, including their functional
+#' associations, component proteins, and Gene Ontology (GO) annotations. Each row represents
+#' a subunit-complex-function combination, providing detailed molecular function annotations
+#' for protein complexes.
+#'
+#' @format A data frame with multiple rows (one per subunit-complex-function combination) and 10 columns:
+#' \describe{
+#'   \item{ComplexName}{Character. Name of the protein complex.}
+#'   \item{Functional_Complex_Group}{Character. The functional group classification of the complex.}
+#'   \item{Root}{Character. Root classification identifier.}
+#'   \item{FCG_assoc_GO_ID}{Character. GO identifiers associated with the functional complex group.}
+#'   \item{ComplexID}{Character. Unique identifier for the complex.}
+#'   \item{subunits_gene_name}{Character. Gene names of complex subunits.}
+#'   \item{functions_go_id}{Character. GO term identifiers describing complex functions.}
+#'   \item{functions_go_name}{Character. Names of the GO terms.}
+#'   \item{functions_go_ontology}{Character. GO domain (e.g., molecular_function).}
+#'   \item{Ontology_type}{Character. Type of ontology (e.g., MF for Molecular Function).}
+#' }
+#'
+#' This dataset is particularly useful for studying protein complex functions and their molecular
+#' activities in human cells. It can be used for analyzing protein-protein interactions,
+#' functional annotations, and complex organization.
+#'
+#' @source Compiled from protein complex databases and GO annotations.
+#'
+#' @examples
+#' data("hComplex")
+#' head(hComplex)
+#' 
+#' # Get unique complexes
+#' unique(hComplex$ComplexName)
+#'
+#' # Filter by molecular function
+#' kinase_binding <- hComplex[hComplex$functions_go_id == "GO:0051018", ]
+#'
+#' # Count unique complexes with specific function
+#' length(unique(hComplex[hComplex$functions_go_name == "protein kinase A binding", "ComplexName"]))
+#'
+"hComplex"
