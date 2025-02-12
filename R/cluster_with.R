@@ -352,8 +352,18 @@ clusterSTW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik"
 #' @return Term clusters object
 #' @author Kai Guo
 #' @export
-simtermW <- function(tree, terms, new_annot, use_background = FALSE, ...) {
+simtermW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik", "lin","faith", "rel", "simic", "gogo", "wang", "anc"), 
+                     submethod = c("kappa", "overlap", "jaccard", "dice"),
+                     normType = "max",
+                     weights = NULL,
+                     annotUniverse= NULL, 
+                     useCache = TRUE,
+                     useIgraph = TRUE,
+                     verbose = TRUE,use_background = FALSE, ...) {
   
+  method <- match.arg(method)
+  ic_method <- match.arg(ic_method)
+  submethod <- match.arg(submethod)
   # Process input annotations
   annot_list <- if(is.data.frame(new_annot)) {
     split(strsplit(new_annot$GeneID, ","), new_annot$Annot)
@@ -378,14 +388,14 @@ simtermW <- function(tree, terms, new_annot, use_background = FALSE, ...) {
   }
   
   # Run clustering 
-  simterm(tree = tree, terms = terms, method = c("term", "ic", "resnik", "lin","faith", "rel", "simic", "gogo", "wang", "anc"),
-            ic_method = c("annotation","universal","wang","offspring"),
-            submethod = c("kappa", "overlap", "jaccard", "dice"),
-            normType = "max",
-            weights = NULL,
-            annotUniverse= NULL, 
-            useCache = TRUE,
-            useIgraph = TRUE,
-            verbose = TRUE,
+  simterm(tree = tree, terms = terms, method = method,
+          ic_method = ic_method,
+          submethod = submethod,
+          normType = normType,
+          weights = weights,
+          annotUniverse= annotUniverse, 
+          useCache = useCache,
+          useIgraph = useIgraph,
+          verbose = verbose,
             ...)
 }
