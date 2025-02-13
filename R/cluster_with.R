@@ -197,8 +197,16 @@ clusterSTW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik"
     lapply(split(strsplit(new_annot$GeneID, ","), new_annot$Annot),unlist)
     } else {
     new_annot
-  }
+    }
   
+  # remove obsolete terms within the new_annot
+  valid_terms <- names(annot_list) %in% tree@termNames
+  if (!all(valid_terms)) {
+    obsolete <- names(annot_list)[!valid_terms]
+    cat("Below Terms were removed due to database update:", "\n")
+    print(obsolete)
+    annot_list <- annot_list[valid_terms]
+  }
   # Update tree annotations
   tree <- updateAnnotations(tree, annot_list, use_background)
   
@@ -371,7 +379,14 @@ simtermW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik", 
   } else {
     new_annot
   }
-  
+  # remove obsolete terms within the new_annot
+  valid_terms <- names(annot_list) %in% tree@termNames
+  if (!all(valid_terms)) {
+    obsolete <- names(annot_list)[!valid_terms]
+    cat("Below Terms were removed due to database update:", "\n")
+    print(obsolete)
+    annot_list <- annot_list[valid_terms]
+  }
   # Update tree annotations
   tree <- updateAnnotations(tree, annot_list, use_background)
   
