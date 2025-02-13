@@ -367,7 +367,7 @@ simtermW <- function(tree, terms, new_annot, method = c("term", "ic", "resnik", 
   submethod <- match.arg(submethod)
   # Process input annotations
   annot_list <- if(is.data.frame(new_annot)) {
-    split(strsplit(new_annot$GeneID, ","), new_annot$Annot)
+    lapply(split(strsplit(new_annot$GeneID, ","), new_annot$Annot),unlist)
   } else {
     new_annot
   }
