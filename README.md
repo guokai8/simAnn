@@ -143,6 +143,17 @@ sim_mat_weighted <- simtermW(tree,
                            new_annot = geneset,
                            method = "wang",
                            weights = weights)
+# or you have the results from richR(guokai8/richR)
+enrichment_df <- data.frame(
+    Annot = c("GO:0006915", "GO:0012501"),
+    GeneID = c("CASP3,BCL2", "CASP3,BAX"),
+    Pvalue = c(0.001, 0.002)
+)
+sim_mat_weighted <- simtermW(tree,
+                           terms = enrichment_df$Annot,
+                           new_annot = enrichment_df,
+                           method = "wang",
+                           weights = weights)
 ```
 
 ### 4. Cluster Similar Terms with custom gene sets
