@@ -336,7 +336,7 @@ clusterComplex <- function(enrich_data,
   
   # Sort results by p-value
   result <- result[order(result$P_Com), ]
-  rownames(results)<-NULL
+  rownames(result)<-NULL
   
   logMsg("Analysis complete")
   return(list(
